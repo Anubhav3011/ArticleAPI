@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.monkhub.article.entity.Article;
 
 @Repository
-public interface ArticleRepository extends JpaRepository<Article, Integer> {
+public interface ArticleRepository extends JpaRepository<Article, Long> {
 
 }

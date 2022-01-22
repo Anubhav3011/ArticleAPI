@@ -38,8 +38,7 @@ public class ArticleApplication implements CommandLineRunner {
 		Comment comment = Comment.builder()
 				.date_created(new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").parse("2020-12-21 09:06:33"))
 				.date_updated(new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").parse("2020-12-21 09:06:33"))
-				.comment("awesome").article(article).articleId(article.getId()).articleTitle(article.getTitle())
-				.build();
+				.comment("awesome").article(article).build();
 		commentService.saveComment(comment);
 
 		while (true) {

@@ -8,8 +8,10 @@ public interface CommentService {
 
 	public List<Comment> getComments();
 
-	public List<Comment> getCommentsByArticleId(int articleId);
+	public List<Comment> getCommentsByArticleId(Long articleId);
 
 	public void saveComment(Comment comment);
+
+	public Object getCommentsDTO(List<Comment> comments);
 
 }

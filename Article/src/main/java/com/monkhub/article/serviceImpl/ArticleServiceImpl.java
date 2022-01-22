@@ -16,7 +16,7 @@ public class ArticleServiceImpl implements ArticleService {
 	private ArticleRepository articleRepository;
 
 	@Override
-	public boolean articleExistsById(int articleId) {
+	public boolean articleExistsById(Long articleId) {
 		return articleRepository.existsById(articleId);
 	}
 
@@ -26,7 +26,7 @@ public class ArticleServiceImpl implements ArticleService {
 	}
 
 	@Override
-	public Article getArticleById(int articleId) {
+	public Article getArticleById(Long articleId) {
 		return articleRepository.findById(articleId).get();
 	}
 

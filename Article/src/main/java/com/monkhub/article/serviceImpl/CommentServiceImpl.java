@@ -1,5 +1,6 @@
 package com.monkhub.article.serviceImpl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,13 +22,22 @@ public class CommentServiceImpl implements CommentService {
 	}
 
 	@Override
-	public List<Comment> getCommentsByArticleId(int articleId) {
+	public List<Comment> getCommentsByArticleId(Long articleId) {
 		return commentRepository.getCommentsByArticleId(articleId);
 	}
 
 	@Override
 	public void saveComment(Comment comment) {
 		commentRepository.save(comment);
+	}
+
+	@Override
+	public Object getCommentsDTO(List<Comment> comments) {
+		List<Object> commentsDTO = new ArrayList<>();
+		for (Comment comment : comments) {
+			commentsDTO.add(comment.getCommentDTO());
+		}
+		return commentsDTO;
 	}
 
 }

@@ -27,7 +27,7 @@ public class ArticleController {
 	}
 
 	@GetMapping("getArticleById/{articleId}")
-	public Article getArticleById(@PathVariable int articleId) {
+	public Article getArticleById(@PathVariable Long articleId) {
 		try {
 			return articleService.getArticleById(articleId);
 		} catch (NoSuchElementException e) {

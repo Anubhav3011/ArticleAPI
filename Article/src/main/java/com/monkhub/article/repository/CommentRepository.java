@@ -9,9 +9,9 @@ import org.springframework.stereotype.Repository;
 import com.monkhub.article.entity.Comment;
 
 @Repository
-public interface CommentRepository extends JpaRepository<Comment, Integer> {
+public interface CommentRepository extends JpaRepository<Comment, Long> {
 
 	@Query(value = "SELECT * FROM Comments c WHERE c.article_id = :articleId", nativeQuery = true)
-	public List<Comment> getCommentsByArticleId(int articleId);
+	public List<Comment> getCommentsByArticleId(Long articleId);
 
 }
